@@ -15,6 +15,7 @@ namespace Zephyr {
 namespace Directory {
 
 // Helper function to convert errno to Directory Status
+// Double check if we need to negate the errno value
 ZephyrDirectory::Status errno_to_directory_status(int errno_value) {
     switch (errno_value) {
         case 0:
@@ -41,7 +42,7 @@ DirectoryHandle* ZephyrDirectory::getHandle() {
 }
 
 ZephyrDirectory::Status ZephyrDirectory::open(const char* path, OpenMode mode) {
-    Status status = Status::OP_OK;
+    ZephyrDirectory::Status status = ZephyrDirectory::Status::OP_OK;
 
     return status;
 }
@@ -51,11 +52,13 @@ bool ZephyrDirectory::isOpen() {
 }
 
 ZephyrDirectory::Status ZephyrDirectory::rewind() {
-    Status status = Status::OP_OK;
+    ZephyrDirectory::Status status = ZephyrDirectory::Status::OP_OK;
     return status;
 }
 
 ZephyrDirectory::Status ZephyrDirectory::read(char* fileNameBuffer, FwSizeType bufSize) {
+    ZephyrDirectory::Status status = ZephyrDirectory::Status::OP_OK;
+    return status;
 }
 
 void ZephyrDirectory::close() {
